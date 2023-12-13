@@ -20,6 +20,16 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
+import AutoSwagger from 'adonis-autoswagger'
+import swagger from '../config/swagger'
+Route.get('/swagger', async () => {
+  return AutoSwagger.docs(Route.toJSON(), swagger)
+})
+
+Route.get('/docs', async () => {
+  return AutoSwagger.ui('/swagger')
+})
+
 Route.get('/', async () => {
   return { hello: 'world' }
 })

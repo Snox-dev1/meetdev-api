@@ -1,0 +1,53 @@
+openapi: "3.0.0"
+info:
+  title: "Meetdev-api"
+  version: "1.0.0"
+components:
+  responses:
+    Forbidden:
+      description: "Access token is missing or invalid"
+    Accepted:
+      description: "The request was accepted"
+    Created:
+      description: "The resource has been created"
+    NotFound:
+      description: "The resource has been created"
+    NotAcceptable:
+      description: "The resource has been created"
+  securitySchemes:
+    BearerAuth:
+      type: "http"
+      scheme: "bearer"
+  schemas:
+    Any:
+      description: "Any JSON object not defined as schema"
+paths:
+  /uploads/*:
+    get:
+      summary: " (route.ts)"
+      description: ""
+      parameters: []
+      tags:
+        - "UPLOADS"
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json: {}
+      security: []
+  :
+    get:
+      summary: " (route.ts)"
+      description: ""
+      parameters: []
+      tags:
+        - ""
+      responses:
+        200:
+          description: "OK"
+          content:
+            application/json: {}
+      security: []
+tags:
+  - name: "UPLOADS"
+    description: "Everything related to UPLOADS"
